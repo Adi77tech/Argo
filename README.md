@@ -9,12 +9,6 @@ This guide provides end-to-end instructions for setting up Argo CD on a Minikube
 # For Linux
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
-
-# For macOS
-brew install minikube
-
-# For Windows (Admin PowerShell)
-choco install minikube
 ```
 
 ### 2. Install kubectl
@@ -22,21 +16,12 @@ choco install minikube
 # Linux
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-
-# macOS
-brew install kubectl
-
-# Windows
-choco install kubernetes-cli
 ```
 
 ### 3. Install Helm (Optional)
 ```bash
 # Linux/macOS
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-
-# Windows
-choco install kubernetes-helm
 ```
 
 ### 4. Start Minikube Cluster
@@ -59,12 +44,6 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
 rm argocd-linux-amd64
-
-# macOS
-brew install argocd
-
-# Windows
-scoop install argocd
 ```
 
 ## 🔐 Accessing Argo CD
@@ -159,12 +138,5 @@ minikube stop
 # Delete cluster
 minikube delete
 ```
-
-## 📚 Next Steps
-- Set up SSO integration
-- Configure webhooks for automatic sync
-- Explore ApplicationSets for bulk deployments
-- Implement RBAC policies
-- Set up sync policies and auto-sync
 
 This comprehensive guide includes all installation steps, access methods, deployment examples, and cleanup instructions for a complete Argo CD setup on Minikube.
